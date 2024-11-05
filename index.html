@@ -18,8 +18,11 @@
     <script>document.write(navigator.userAgent)</script>
   </div>
   <div>
-    <a href="intent://shop1.iclouden.com/#Intent;scheme=https;package=com.android.chrome;end;">shop1</a>
+    <a id="chromeShop1" href="intent://shop1.iclouden.com/#Intent;scheme=https;package=com.android.chrome;end;">shop1</a>
     <a href="intent://shop1.iclouden.com/#Intent;scheme=https;package=com.android.chrome1;end;">不存在的包名</a>
+
+    
+    <button onclick="setTimeout(()=>{document.querySelector('#chromeShop1').click()})">点击1秒后尝试打开shop1</button>
   </div>
 </body>
 </html>
