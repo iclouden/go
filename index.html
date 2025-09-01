@@ -9,6 +9,20 @@
     (()=>{
       if(!location.search)return;
       const search= new URLSearchParams(location.search);
+      const goUrlBase=search.get('go');
+      if(goUrlBase){
+        const goUrl = new URL(goUrlBase);
+        if(search.size){
+          search.forEach((value,key)=>{
+            if(key!=='go'){
+              goUrl.searchParams.set(key, value);
+            }
+          })
+        }
+        location.href=goUrl.toString();
+        return;
+      }
+
       if(search.get('shop')){
         location.href='http://localhost:3600/admin/pages/m'+location.search;
       }
