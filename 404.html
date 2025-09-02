@@ -1,0 +1,13 @@
+
+<script>
+  (()=>{
+    const prefix = '/go/to/';
+    const pathname = location.pathname;
+    if(pathname.startsWith(prefix)){
+      const routePath = pathname.substring(prefix.length);
+      const [s,...paths] = routePath.split('/');
+      const toUrl = `${s}://${paths.join('/')}${location.search}`;
+      location.href=toUrl;
+    }
+  })()
+</script>
