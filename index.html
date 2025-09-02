@@ -14,9 +14,7 @@
         const goUrl = new URL(goUrlBase);
         if(search.size){
           search.forEach((value,key)=>{
-            if(key!=='go'){
-              goUrl.searchParams.set(key, value);
-            }
+            goUrl.searchParams.set(key, value);
           })
         }
         location.href=goUrl.toString();
